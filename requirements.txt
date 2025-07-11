@@ -3,6 +3,7 @@ langchain_core
 python-dotenv
 streamlit
 langchain_community
+langchain_groq
 langserve
 fastapi
 pydantic
@@ -15,4 +16,12 @@ chromadb
 faiss-cpu
 langgraph
 langsmith
-langchain-tavily
+duckduckgo-search
+
+langchain_google_genai
+langchain_huggingface
+
+bs4
+protobuf
+langchain 
+langchain-pinecone

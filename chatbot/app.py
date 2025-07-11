@@ -7,10 +7,7 @@ from langgraph.graph.message import add_messages
 from langchain.chat_models import init_chat_model
 from langchain_community.tools import DuckDuckGoSearchRun
 from langgraph.prebuilt import ToolNode, tools_condition
-
-def serach_ducduckgo(query: str):
-    search = DuckDuckGoSearchRun()
-    search.invoke("Obama's first name?")
+from langchain_core.tools import tool
 
 from dotenv import load_dotenv
 
@@ -20,6 +17,12 @@ load_dotenv()
 class State(TypedDict):
     messages: Annotated[list, add_messages]
 
+@tool
+def serach_ducduckgo(query: str):
+    """search
+    """
+    search = DuckDuckGoSearchRun()
+    return search.invoke(query)
 
 tools = [serach_ducduckgo]
 
